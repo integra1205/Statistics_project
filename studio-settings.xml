@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<studio>
+    <functionalitySettings>
+        <functionality id="oneToOneIndex"
+                       state="ENABLE"/>
+        <functionality id="joinedInheritanceDeleteCascade"
+                       state="ENABLE"/>
+        <functionality id="newFkConstraintNaming"
+                       state="ENABLE"/>
+    </functionalitySettings>
+    <dbScripts>
+        <excludes>
+            <hsql>
+                <item name="180421-0-dropDdcdiMlbTeam.sql">
+                    <![CDATA[alter table DDCDI_MLB_TEAM rename to DDCDI_MLB_TEAM__UNUSED ;]]>
+                </item>
+                <item name="180421-0-dropDdcdiMlbTeam_DropScript.sql">
+                    <![CDATA[drop table DDCDI_MLB_TEAM__UNUSED if exists cascade ;]]>
+                </item>
+                <item name="180421-0-dropDdcdiCustomer.sql">
+                    <![CDATA[alter table DDCDI_CUSTOMER rename to DDCDI_CUSTOMER__UNUSED ;]]>
+                </item>
+                <item name="180421-0-dropDdcdiCustomer_DropScript.sql">
+                    <![CDATA[drop table DDCDI_CUSTOMER__UNUSED if exists cascade ;]]>
+                </item>
+                <item name="180421-0-dropDdcdiMlbPlayer.sql">
+                    <![CDATA[alter table DDCDI_MLB_PLAYER rename to DDCDI_MLB_PLAYER__UNUSED ;]]>
+                </item>
+                <item name="180421-0-dropDdcdiMlbPlayer_DropScript.sql">
+                    <![CDATA[drop table DDCDI_MLB_PLAYER__UNUSED if exists cascade ;]]>
+                </item>
+                <item name="180421-0-dropDdcdiMlbTeam01.sql">
+                    <![CDATA[alter table DDCDI_MLB_PLAYER drop constraint FK_DDCDI_MLB_PLAYER_TEAM ;]]>
+                </item>
+                <item name="180425-0-dropDdcdiMlbTeam_DropScript.sql">
+                    <![CDATA[drop table DDCDI_MLB_TEAM__U24714 if exists cascade ;]]>
+                </item>
+                <item name="180425-0-dropDdcdiMlbTeam.sql">
+                    <![CDATA[alter table DDCDI_MLB_TEAM rename to DDCDI_MLB_TEAM__U24714 ;]]>
+                </item>
+                <item name="180425-0-dropDdcdiMlbPlayer_DropScript.sql">
+                    <![CDATA[drop table DDCDI_MLB_PLAYER__U24120 if exists cascade ;]]>
+                </item>
+                <item name="180425-0-dropDdcdiMlbPlayer.sql">
+                    <![CDATA[alter table DDCDI_MLB_PLAYER rename to DDCDI_MLB_PLAYER__U24120 ;]]>
+                </item>
+                <item name="180425-0-dropDdcdiCustomer_DropScript.sql">
+                    <![CDATA[drop table DDCDI_CUSTOMER__U95202 if exists cascade ;]]>
+                </item>
+                <item name="180425-0-dropDdcdiCustomer.sql">
+                    <![CDATA[alter table DDCDI_CUSTOMER rename to DDCDI_CUSTOMER__U95202 ;]]>
+                </item>
+                <item name="180526-0-dropDdcdiCustomer.sql">
+                    <![CDATA[alter table DDCDI_CUSTOMER rename to DDCDI_CUSTOMER__U87239 ;]]>
+                </item>
+                <item name="180526-0-dropDdcdiCustomer_DropScript.sql">
+                    <![CDATA[drop table DDCDI_CUSTOMER__U87239 if exists cascade ;]]>
+                </item>
+                <item name="180526-0-dropDdcdiMlbPlayer.sql">
+                    <![CDATA[alter table DDCDI_MLB_PLAYER rename to DDCDI_MLB_PLAYER__U85525 ;]]>
+                </item>
+                <item name="180526-0-dropDdcdiMlbTeam_DropScript.sql">
+                    <![CDATA[drop table DDCDI_MLB_TEAM__U84164 if exists cascade ;]]>
+                </item>
+                <item name="180526-0-dropDdcdiMlbTeam.sql">
+                    <![CDATA[alter table DDCDI_MLB_TEAM rename to DDCDI_MLB_TEAM__U84164 ;]]>
+                </item>
+                <item name="180526-0-dropDdcdiMlbPlayer_DropScript.sql">
+                    <![CDATA[drop table DDCDI_MLB_PLAYER__U85525 if exists cascade ;]]>
+                </item>
+            </hsql>
+        </excludes>
+    </dbScripts>
+</studio>

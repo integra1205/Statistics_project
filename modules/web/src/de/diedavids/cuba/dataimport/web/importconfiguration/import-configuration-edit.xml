@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="de.diedavids.cuba.dataimport.web.importconfiguration.ImportConfigurationEdit"
+        datasource="importConfigurationDs"
+        focusComponent="dataFieldGroup"
+        messagesPack="de.diedavids.cuba.dataimport.web.importconfiguration">
+    <dsContext>
+        <datasource id="importConfigurationDs"
+                    class="de.diedavids.cuba.dataimport.entity.ImportConfiguration"
+                    view="importConfiguration-view">
+            <collectionDatasource id="importAttributeMappersDs"
+                                  property="importAttributeMappers"/>
+            <collectionDatasource id="uniqueConfigurationsDs"
+                                  property="uniqueConfigurations">
+                <collectionDatasource id="entityAttributesDs"
+                                      property="entityAttributes"/>
+            </collectionDatasource>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contentTabSheet"
+            spacing="true">
+        <tabSheet id="contentTabSheet">
+            <tab id="dataTab"
+                 caption="msg://dataTab"
+                 margin="true"
+                 spacing="true">
+                <fieldGroup id="dataFieldGroup"
+                            datasource="importConfigurationDs">
+                    <column width="250px">
+                        <field property="name"/>
+                        <field editable="false"
+                               property="entityClass"/>
+                        <field editable="false"
+                               property="fileCharset"/>
+                        <field editable="false"
+                               property="template"/>
+                        <field contextHelpText="msg://transactionStrategyHelp"
+                               property="transactionStrategy"/>
+                        <field property="comment"
+                               rows="5"/>
+                    </column>
+                </fieldGroup>
+            </tab>
+            <tab id="formatTab"
+                 caption="msg://formatTab"
+                 margin="true"
+                 spacing="true">
+                <fieldGroup id="formatFieldGroup"
+                            datasource="importConfigurationDs">
+                    <column width="250px">
+                        <field property="dateFormat"/>
+                        <field property="booleanTrueValue"/>
+                        <field property="booleanFalseValue"/>
+                    </column>
+                </fieldGroup>
+            </tab>
+            <tab id="preCommitScriptTab"
+                 caption="msg://preCommitScriptTab"
+                 margin="true"
+                 spacing="true">
+                <sourceCodeEditor id="preCommitScriptEditor"
+                                  contextHelpText="msg://preCommitScriptHelp"
+                                  datasource="importConfigurationDs"
+                                  height="100%"
+                                  mode="Groovy"
+                                  property="preCommitScript"
+                                  width="100%"/>
+            </tab>
+            <tab id="attributeMappersTab"
+                 caption="msg://importAttributeMappersTab"
+                 expand="importAttributeMappersTable"
+                 margin="true"
+                 spacing="true">
+                <table id="importAttributeMappersTable"
+                       width="100%">
+                    <actions>
+                        <action id="edit"
+                                openType="DIALOG"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="mapperMode"/>
+                        <column id="fileColumnNumber"/>
+                        <column id="fileColumnAlias"/>
+                        <column id="attributeType"/>
+                        <column id="entityAttribute"/>
+                    </columns>
+                    <rows datasource="importAttributeMappersDs"/>
+                    <buttonsPanel>
+                        <popupButton id="createPopupBtn"
+                                     caption="msg://createPopupBtnCaption"
+                                     icon="ADD_ACTION">
+                            <actions>
+                                <action id="createAutomatic"
+                                        caption="msg://createAutomaticAttributeMapper"
+                                        invoke="newAutomaticAttributeMapper"/>
+                                <action id="createCustom"
+                                        caption="msg://createCustomAttributeMapper"
+                                        invoke="newCustomAttributeMapper"/>
+                            </actions>
+                        </popupButton>
+                        <button action="importAttributeMappersTable.edit"/>
+                        <button action="importAttributeMappersTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+            <tab id="uniqueConfigurationsTab"
+                 caption="msg://uniqueConfigurationsTab"
+                 margin="true"
+                 spacing="true">
+                <table id="uniqueConfigurationsTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="create"
+                                openType="DIALOG"/>
+                        <action id="edit"
+                                openType="DIALOG"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="policy"/>
+                        <column id="entityAttributes"/>
+                    </columns>
+                    <rows datasource="uniqueConfigurationsDs"/>
+                    <buttonsPanel>
+                        <button action="uniqueConfigurationsTable.create"/>
+                        <button action="uniqueConfigurationsTable.edit"/>
+                        <button action="uniqueConfigurationsTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+        </tabSheet>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

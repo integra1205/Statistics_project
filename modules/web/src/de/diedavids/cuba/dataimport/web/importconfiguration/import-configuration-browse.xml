@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="de.diedavids.cuba.dataimport.web.importconfiguration.ImportConfigurationBrowse"
+        focusComponent="importConfigurationsTable"
+        lookupComponent="importConfigurationsTable"
+        messagesPack="de.diedavids.cuba.dataimport.web.importconfiguration">
+    <dsContext>
+        <groupDatasource id="importConfigurationsDs"
+                         class="de.diedavids.cuba.dataimport.entity.ImportConfiguration"
+                         view="importConfiguration-view">
+            <query>
+                <![CDATA[select e from ddcdi$ImportConfiguration e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="importConfigurationsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="importConfigurationsTable"
+                datasource="importConfigurationsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="importConfigurationsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="import"
+                        caption="msg://import"
+                        icon="icons/wf-design-import.png"
+                        invoke="executeImport"
+                        trackSelection="true"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="entityClass"/>
+                <column id="comment"/>
+            </columns>
+            <rows datasource="importConfigurationsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel">
+                <button id="createBtn"
+                        action="importConfigurationsTable.create"/>
+                <button id="editBtn"
+                        action="importConfigurationsTable.edit"/>
+                <button id="removeBtn"
+                        action="importConfigurationsTable.remove"/>
+                <button id="importBtn"
+                        action="importConfigurationsTable.import"
+                        />
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

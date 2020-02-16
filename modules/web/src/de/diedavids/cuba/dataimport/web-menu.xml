@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://schemas.haulmont.com/cuba/menu.xsd ">
+    <menu id="application" insertAfter="administration">
+        <item screen="ddcdi_Order.browse"/>
+    </menu>
+
+    <menu id="data-import"
+          insertBefore="sys$Category.browse">
+        <item screen="ddcdi$ImportConfiguration.browse"/>
+        <item openType="DIALOG"
+              screen="ddcdi$import-wizard"/>
+        <item screen="ddcdi$ImportExecution.browse"/>
+
+    </menu>
+</menu-config>

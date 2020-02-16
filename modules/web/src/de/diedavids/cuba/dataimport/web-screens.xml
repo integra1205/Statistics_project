@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="de/diedavids/cuba/dataimport/screens.xml"/>
+    <screen id="ddcdi$import-wizard"
+            template="/de/diedavids/cuba/dataimport/web/importwizard/import-wizard.xml"/>
+    <screen id="ddcdi$import-with-import-configuration-wizard"
+            template="/de/diedavids/cuba/dataimport/web/importwizard/import-with-import-configuration-wizard.xml"/>
+    <screen id="ddcdi$ImportAttributeMapperCustom.frame"
+            template="de/diedavids/cuba/dataimport/web/importattributemapper/import-attribute-mapper-custom-frame.xml"/>
+    <screen id="ddcdi$ImportAttributeMapperAutomatic.frame"
+            template="de/diedavids/cuba/dataimport/web/importattributemapper/import-attribute-mapper-automatic-frame.xml"/>
+    <screen id="ddcdi$ImportAttributeMapper.edit"
+            template="de/diedavids/cuba/dataimport/web/importattributemapper/import-attribute-mapper-edit.xml"/>
+    <screen id="ddcdi$ImportConfiguration.lookup"
+            template="de/diedavids/cuba/dataimport/web/importconfiguration/import-configuration-lookup.xml"/>
+    <screen id="ddcdi$ImportConfiguration.browse"
+            template="de/diedavids/cuba/dataimport/web/importconfiguration/import-configuration-browse.xml"/>
+    <screen id="ddcdi$ImportConfiguration.edit"
+            template="de/diedavids/cuba/dataimport/web/importconfiguration/import-configuration-edit.xml"/>
+    <screen id="ddcdi$ImportConfiguration.create"
+            template="de/diedavids/cuba/dataimport/web/importconfiguration/import-configuration-create.xml"/>
+    <screen id="ddcdi$UniqueConfiguration.edit"
+            template="de/diedavids/cuba/dataimport/web/uniqueconfiguration/unique-configuration-edit.xml"/>
+    <screen id="ddcdi$UniqueConfigurationAttribute.edit"
+            template="de/diedavids/cuba/dataimport/web/uniqueconfigurationattribute/unique-configuration-attribute-edit.xml"/>
+    <screen id="ddcdi_Order.browse" template="de/diedavids/cuba/dataimport/web/screens/order/order-browse.xml"/>
+    <screen id="ddcdi_Order.edit" template="de/diedavids/cuba/dataimport/web/screens/order/order-edit.xml"/>
+    <screen id="ddcdi_Order.browse" template="de/diedavids/cuba/dataimport/web/screens/order/order-browse.xml"/>
+    <screen id="ddcdi_Order.edit" template="de/diedavids/cuba/dataimport/web/screens/order/order-edit.xml"/>
+</screen-config>

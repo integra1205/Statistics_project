@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="de.diedavids.cuba.dataimport.web.importattributemapper.ImportAttributeMapperEdit"
+        datasource="importAttributeMapperDs"
+        focusComponent="contentBox"
+        messagesPack="de.diedavids.cuba.dataimport.web.importattributemapper">
+    <dsContext>
+        <datasource id="importAttributeMapperDs"
+                    class="de.diedavids.cuba.dataimport.entity.attributemapper.ImportAttributeMapper"
+                    view="_local"/>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <hbox id="contentBox" width="100%"/>
+
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

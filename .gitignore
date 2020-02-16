@@ -1,0 +1,16 @@
+.gradle
+.studio
+*.ipr
+*.iml
+*.iws
+.ideaDataSources
+build/*
+deploy/*
+modules/*/build/*
+modules/*/test-home/*
+out
+test-run
+.DS_Store
+test-home
+dataSources
+.idea

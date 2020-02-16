@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="de.diedavids.cuba.dataimport.web.screens.order.OrderBrowse"
+        focusComponent="ordersTable"
+        lookupComponent="ordersTable"
+        messagesPack="de.diedavids.cuba.dataimport.web.screens.order">
+    <dsContext>
+        <groupDatasource id="ordersDs"
+                         class="de.diedavids.cuba.dataimport.entity.Order"
+                         view="_local">
+            <query>
+                <![CDATA[select e from ddcdi_Order e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ordersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="ordersTable"
+                datasource="ordersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="ordersTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="NEW_TAB"/>
+                <action id="edit"
+                        openType="NEW_TAB"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="website"/>
+                <column id="number_order"/>
+                <column id="date_create"/>
+                <column id="payment_method"/>
+                <column id="cost_final"/>
+                <column id="cost_order"/>
+                <column id="paid"/>
+                <column id="canceled"/>
+                <column id="section"/>
+                <column id="product"/>
+                <column id="hours_paid"/>
+                <column id="consultant"/>
+                <column id="customer"/>
+                <column id="date_estimated"/>
+                <column id="town_order"/>
+            </columns>
+            <rows datasource="ordersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="ordersTable.create"/>
+                <button id="editBtn" action="ordersTable.edit"/>
+                <button id="removeBtn" action="ordersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

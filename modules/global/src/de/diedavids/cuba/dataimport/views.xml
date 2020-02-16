@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="de.diedavids.cuba.dataimport.entity.ImportExecution"
+          extends="_local"
+          name="importExecution-with-details-view">
+        <property name="file"
+                  view="_minimal"/>
+        <property name="details"
+                  view="_local"/>
+        <property name="configuration"
+                  view="_minimal"/>
+    </view>
+    <view class="de.diedavids.cuba.dataimport.entity.ImportExecution"
+          extends="_local"
+          name="importExecution-view">
+        <property name="file"
+                  view="_minimal"/>
+        <property name="configuration"
+                  view="_minimal"/>
+    </view>
+    <view class="de.diedavids.cuba.dataimport.entity.ImportConfiguration"
+          extends="_local"
+          name="importConfiguration-view">
+        <property name="logs"
+                  view="importExecution-with-details-view"/>
+        <property name="template"
+                  view="_minimal"/>
+        <property name="importAttributeMappers"
+                  view="_local"/>
+        <property name="uniqueConfigurations"
+                  view="uniqueConfiguration-view"/>
+    </view>
+    <view class="de.diedavids.cuba.dataimport.entity.UniqueConfiguration"
+          extends="_local"
+          name="uniqueConfiguration-view">
+        <property name="entityAttributes"
+                  view="_minimal"/>
+    </view>
+</views>

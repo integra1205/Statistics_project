@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="de.diedavids.cuba.dataimport.web.screens.order.OrderEdit"
+        datasource="orderDs"
+        focusComponent="fieldGroup"
+        messagesPack="de.diedavids.cuba.dataimport.web.screens.order">
+    <dsContext>
+        <datasource id="orderDs"
+                    class="de.diedavids.cuba.dataimport.entity.Order"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox" spacing="true">
+        <scrollBox id="scrollBox" spacing="true">
+            <fieldGroup id="fieldGroup" datasource="orderDs">
+                <column width="250px">
+                    <field property="website"/>
+                    <field property="number_order"/>
+                    <field property="date_create"/>
+                    <field property="payment_method"/>
+                    <field property="cost_final"/>
+                    <field property="cost_order"/>
+                    <field property="paid"/>
+                    <field property="canceled"/>
+                    <field property="section"/>
+                    <field property="product"/>
+                    <field property="hours_paid"/>
+                    <field property="consultant"/>
+                    <field property="customer"/>
+                    <field property="date_estimated"/>
+                    <field property="town_order"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
